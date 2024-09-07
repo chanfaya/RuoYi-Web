@@ -38,11 +38,6 @@ export const constantRoutes: RouteRecordRaw[] = [
     ]
   },
   {
-    path: '/social-callback',
-    hidden: true,
-    component: () => import('@/layout/components/SocialCallback/index.vue')
-  },
-  {
     path: '/login',
     component: () => import('@/views/login.vue'),
     hidden: true
@@ -160,20 +155,6 @@ export const dynamicRoutes: RouteRecordRaw[] = [
         component: () => import('@/views/tool/gen/editTable.vue'),
         name: 'GenEdit',
         meta: { title: '修改生成配置', activeMenu: '/tool/gen', icon: '', noCache: true }
-      }
-    ]
-  },
-  {
-    path: '/workflow/leaveEdit',
-    component: Layout,
-    hidden: true,
-    permissions: ['workflow:leave:edit'],
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/workflow/leave/leaveEdit.vue'),
-        name: 'leaveEdit',
-        meta: { title: '请假申请', activeMenu: '/workflow/leave', noCache: true }
       }
     ]
   }
